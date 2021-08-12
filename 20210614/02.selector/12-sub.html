@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            .box a { padding: 20px 0;}
+            /* 하위 선택자는 하위 요소이기만하면
+            선택이 되는 선택자입니다
+            기존의 >는 반드시 부모 자식관계가 
+            성립해야 했지만 하위 선택자는 
+            부모 자식이 아니어도 자손이기만 하면 되고
+            심지어 중간의 일부 계층을 생략해도 작동합니다
+            ==> class 명이 box인 하위 a태그 전부 스타일을 준다?*/
+        </style>
+    </head>
+    <body>
+        <h1>인강사이트 바로가기</h1>
+        <ul class="box">
+            <li><a href="#">자바 인강</a></li>
+            <li><a href="#">파이썬 인강</a></li>
+            <li><a href="#">CPP 인강</a></li>
+        </ul>
+    </body>
+</html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>연습쟝</title>
+</head>
+
+<body>
+    <fieldset>
+        <legend>여러 줄 글상자</legend>
+        <p>&lt;textarea&gt;&lt;textarea/&gt;를 이용해서 여러 줄 글상자를 만들 수 있습니다</p>
+        <p>속성에 col = "30"을 주면, 30글자가 가로너비</p>
+        <p>속성에 row = "10"을 주면, 10줄이 세로높이가 됩니다</p>
+        답글<br>
+        <textarea name="" id="" cols="30" rows="10"></textarea>
+    </fieldset>
+
+    <fieldset>
+        <legend>선택항목</legend>
+        과목선택
+        <select>
+            <option>html</option>
+            <option>css</option>
+            <option>js</option>
+            <option>jquery</option>
+        </select>
+        <br>
+        <br>
+        수강지역 선택
+        <select>
+            <optgroup label="마포구">
+                <option>서교동</option>
+                <option>동교동</option>
+                <option>합정동</option>
+            </optgroup>
+            <optgroup label="동대문구">
+                <option>전농동</option>
+                <option>회기동</option>
+                <option>휘경동</option>
+            </optgroup>
+        </select>
+    </fieldset>
+
+    <h1>추가 폼 요소</h1>
+    <fieldset>
+        <legend>input type</legend>
+        <p>검색 : <input type="search"></p>
+        <p>사이트 : <input type="url"></p>
+        <p>수량 : <input type="number" max="100" min="0" step="0.1"></p>
+        <p>만족도 : <input type="range" /></p>
+        <p>날짜 : <input type="date" /></p>
+        <p>시간 : <input type="time" /></p>
+        <p>색상 : <input type="color" /></p>
+    </fieldset>
+
+    <fieldset>
+        <legend>유효성 검사</legend>
+        <ul>
+            <li><b>*</b>이름 : <input type="text"></li>
+            <li><b>*</b>아이디 : <input type="text"></li>
+            <li><b>*</b>비밀번호 : <input type="password"></li>
+            <li>휴대폰 : <input type="text"></li>
+        </ul>
+    </fieldset>
+    <hr>
+    <fieldset>
+        <legend>필드에 힌트주기</legend>
+        <p><input type="text" placeholder="id를 입력하세요"></p>
+        <input type="password" placeholder="pw를 입력하세요">
+    </fieldset>
+
+    <fieldset>
+        <legend>모의 글쓰기 창</legend>
+        <p>글쓴이 : <input type="text" value="aaa" readonly></p>
+        <p>제목 : <input type="text"></p>
+        <p>본문 : <textarea cols="30" rows="10"></textarea></p>
+        <input type="submit" value="제출">
+        <input type="reset" value="초기화">
+    </fieldset>
+
+    <h1>그룹핑</h1>
+    <h2>div 그룹핑</h2>
+    <div>
+        <ul>
+            <li><a href="#">홈</a></li>
+            <li><a href="#">소개</a></li>
+        </ul>
+        <address>
+            COPYRIGHT &COPY;ICT.All RIGHT RESERVED
+        </address>
+    </div>
+
+    <h2>span 요소</h2>
+    <ul>
+        <li>
+            <span>
+                <a href="#">오늘의 책</a><br>
+        <em><a href="#">HTML</a></em>
+    </ul>
+    </span>
+    </li>
+    <style>
+        div {
+            border: 1px solid #000;
+        }
+
+        span {
+            border: 1px solid #f01414;
+        }
+    </style>
+</body>
+
+</html>
