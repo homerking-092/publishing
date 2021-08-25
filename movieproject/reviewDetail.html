@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<style>
+body {
+  background-color: #2b2b2b;
+  height: 100vh;
+}
+#main-body {
+  display: flex;
+  padding-top: 120px;
+}
+#main-sidebar {
+  width: 13%;
+}
+#main-sidebar2 {
+  width: 13%;
+}
+#main-contents {
+	padding: 10% ;
+  background-color: white;
+  height: 300vh;
+  width: 74%;
+}
+.review_btn{
+	border: none;
+	border-radius: 5%;
+	background-color: green;
+	color: indigo;
+}
+#detailTable{
+	border: 1px solid gray; width: auto; margin: auto;
+}
+</style>
+<meta charset="UTF-8">
+<title>리뷰 디테일</title>
+</head>
+<body>
+    <!-- main 화면 body start-->
+	<div id="main-body">
+		<div id="main-sidebar"></div>
+		<div id="main-contents">
+		<div class="movieReviewContents">
+
+			
+			<form action="/MovieProject/moviereviewwrite.do" method="post">
+				<input type="hidden" name="mId" value="${movie.mid }"> <input
+					type="submit" class="review_btn write" value="리뷰작성">			
+			</form>
+		    
+			
+			<form action="/MovieProject/moviedetail.do?mid=${movie.mid }"
+				method="post">
+				<input type="submit" class="review_btn list" value="목록으로">
+			</form>
+
+			<c:set var="review" value="${reviewDetail }"></c:set>
+
+			<table id="detailTable" border="1">
+				<thead>
+					<tr>
+						<th>리뷰번호</th>
+						<th>회원아이디</th>
+						<th>영화 제목</th>
+						<th>평점</th>
+						<th>리뷰내용</th>
+						<th>작성일</th>
+					</tr>
+				</thead>
+				<tbody>
+					<c:forEach var="review" items="${reviewList }">
+						<tr>
+							<td>${review.rNum }</td>
+							<td>${review.uId }</td>
+							<td>${review.mTitle }</td>
+							<td>${review.rRate }</td>
+							<td>${review.rContent }</td>
+							<td>${review.rDate }</td>
+							<td><select onchange="ddd(this.value,'${review.rNum}')">
+									<option value=""></option>
+									<option value="/MovieProject/moviereviewupdateok.do">수정</option>
+									<option value="/MovieProject/moviereviewdelete.do">삭제</option>
+							</select></td>
+						</tr>
+					</c:forEach>
+				</tbody>
+				<tr>
+
+
+				</tr>
+			</table>
+			
+			</div>
+
+		</div>
+		<div id="main-sidebar2"></div>
+	</div>
+	<!-- main 화면 body end-->
+</body>
+</html>
