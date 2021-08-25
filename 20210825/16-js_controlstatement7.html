@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<style>
+
+</style>
+<script>
+    // 별찍기
+    // 별은 4단
+    /*
+        *
+        **
+        ***
+        ****
+    */
+   for(i = 0; i <= 3; i++){
+       for(j = 0; j <= i; j++){
+           document.write("*");
+       }
+       document.write("<br>");
+    }
+
+
+    document.write("<br>");
+    
+    /*
+        ****
+        ***
+        **
+        *
+    */
+   for(i = 0; i <= 3; i++){
+       for(j = 4; j > i; j--){
+           document.write("*");
+       }
+       document.write("<br>");
+   }
+
+   document.write("<br>");
+
+   /*
+            *
+           **
+          ***
+         ****
+   */
+
+   for(i = 0; i <= 3; i++){
+       for(j = 4; j > i; j--){
+           document.write("&nbsp;");
+       }
+       for(j = 0; j <= i; j++){
+           document.write("*");
+       }
+       document.write("<br>");
+   }
+    
+</script>
+<meta charset="UTF-8">
+<title></title>
+</head>
+<body>
+
+</body>
+</html>

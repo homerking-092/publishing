@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<style>
+
+</style>
+<script>
+    // 사람인지 아닌지 판별할 수 있도록
+    // prompt를 이용해 문제를 내고
+    // 정답을 적은 경우 조건문을 이용해서
+    // 브라우저 화면에 '사람으로 확인되었습니다'
+    // 정답을 적지 않은 경우 '로봇은 접속할 수 없습니다'
+    var ques = prompt("사람임을 확인해주세요");
+    console.log(typeof(ques));  // 자료형은 typeof(자료)로 검사가 가능
+
+
+    if(ques === '사람'){
+        document.write("사람으로 확인 되었습니다")
+    }else if(ques !== '사람'){
+        document.write("로봇은 접속할 수 업습니다");
+    }
+    
+    
+</script>
+<meta charset="UTF-8">
+<title></title>
+</head>
+<body>
+    
+</body>
+</html>
