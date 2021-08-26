@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <style>
+
+    </style>
+    <script>
+        var num = 0;    // 그림 번호
+
+        function nextPic() {    // 정적 함수이기때문에 리턴다입 X
+            num++   // 다음 그림번호로 이동
+            //
+            if (num > 2) {    // 마지막 그림번호 초과시
+                num = 0;    // 첫 그림을 되돌리기
+            }
+
+            // console.log(document.getElementById("pic"));
+
+            // id가 pic인 요소(그림)의 src 속성을 1증가된 num을 이용해 바꿔줌
+            document.getElementById("pic").src = "images/image" + num + ".jfif";
+
+            // 그림파일 크기 조정
+            document.getElementById("pic").width = "300";
+            document.getElementById("pic").height = "300";
+
+            // 그림 변경 후 링크 이동을 막기 위해 사용
+            return false;
+        }
+
+        ////////////////////////////////
+        // 문제1: prevPic 함수를 만들어서 사진을 뒤로 돌리는 로직
+
+
+        function prevPic() {
+            num--;
+
+            //
+            if (num < 0) {  // 첫그림보다 작은 번호로 가면
+                num = 2;    // 마지막 그림 번호로 적용
+            }
+
+            // console.log(document.getElementById("pic"));
+            // 그림파일 크기 조정
+            document.getElementById("pic").width = "300";
+            document.getElementById("pic").height = "300";
+
+            document.getElementById("pic").src = "images/image" + num + ".jfif";
+
+            return false;
+        }
+
+        // 문제2: 마지막 그림에서 prev를 누르면 첫 그림으로
+        //        첫 그림에서 prev를 누르면 마지막 그림으로 돌아가는 로직
+
+    </script>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+
+<body>
+    <h1>이미지 넘기기</h1>
+
+    <a href="#" onclick="return prevPic()">
+        << </a>
+
+            <img src="images/image0.jfif" alt="사진" id="pic">
+
+            <a href="#" onclick="return nextPic()"> >> </a>
+</body>
+<script>
+    console.log(document.getElementById("pic"));
+</script>
+
+</html>
