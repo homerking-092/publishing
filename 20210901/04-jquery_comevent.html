@@ -3,6 +3,7 @@
 
 <head>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src='http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js'></script>
     <style>
         * {
             margin: 0;
@@ -120,19 +121,19 @@
             // toggle은 함수 여러개를 나열해서 넣으면
             // 클릭할 때마다 함수가 바뀌어서 실행됩니다
             // .toggle(함수1(){}, 함수2(){}, 함수(){} ... )
-            // $("#btn4").toggle(function () { // 1번함수
-            //     // JS의 이벤트에서 this는 클릭당한 태그입니다
-            //     $(this).next().css("background-color", "red");
-            // }, function () {    // 2번함수
-            //     // 위와 같이 작성하되 오렌지
-            //     $(this).next().css("background-color", "orange");
-            // }, function () {    // 3번함수
-            //     // 노랑
-            //     $(this).next().css("background-color", "yellow");
-            // }, function () {    // 4번함수
-            //     // 파랑
-            //     $(this).next().css("background-color", "blue");
-            // });
+            $("#btn4").toggle(function () { // 1번함수
+                // JS의 이벤트에서 this는 클릭당한 태그입니다
+                $(this).toggle(true).css("color", "red");
+            }, function () {    // 2번함수
+                // 위와 같이 작성하되 오렌지
+                $(this).toggle(true).css("color", "orange");
+            }, function () {    // 3번함수
+                // 노랑
+                $(this).toggle(true).css("color", "yellow");
+            }, function () {    // 4번함수
+                // 파랑
+                $(this).toggle(true).css("color", "blue");
+            });
 
             // hover는 마우스가 선택요소 영역에 오버되거나
             // 아웃될 때 실행되는 함수를 각각 지정합니다
