@@ -1,0 +1,85 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<title>css</title>	
+	<style type="text/css">
+		*{margin:0; padding:0;}
+		#wrapper{
+			width:500px; 			
+			background:#ffff00; 
+			border:1px solid #000;
+			margin:0 auto;
+			text-align:center;
+			vertical-align:center;
+			font:bold 12px/120% "돋움";
+		}
+		#header{
+			background:#eeeae0;
+			height:50px;
+			padding:20px 0 0 0;
+		}
+		#container{
+			background:#fff;
+			position:relative;			
+			padding:20px 0 20px 0;
+		}
+			#menu{			
+			position:absolute; top:34px; left:0;		
+			background:#e8d0be;
+			width:100px;
+			height:50px;				
+			padding:20px 0 0 0;
+
+			}
+			#content{
+			margin-left:100px; /*  좌측 메뉴의 폭만큼 마진값을 주어 오른쪽으로 밀어낸다  또한, 마진값 대신 
+			                       position:relative; left:149px; 을 사용하여도 된다 */			
+			background:#dee8be;		
+			width:300px;
+			height:50px;	
+			padding:20px 0 0 0;
+			}
+
+			#aside{
+			position:absolute; top:34px; right:0;	
+			background:#e8d0be;
+			width:100px; 
+			height:50px;				
+			padding:20px 0 0 0;	
+			}
+
+		#footer{
+			background:#eeeae0;
+			height:50px;
+			padding:20px 0 0 0;
+		}
+	</style>
+</head>
+
+<body>
+
+<div id="wrapper">
+	<div id="header">
+		<p>header</p>
+	</div>
+	<div id="container">
+		container (position:relative; width:100%)
+		<div id="menu">
+			left menu<br/>(position:<br/>absolute;)
+		</div>
+		<div id="content">
+			content<br/>(margin-left:<br/> 좌측메뉴만큼의 width값)
+		</div>
+		<div id="aside">
+			aside<br/>(position:<br/> absolute;)
+		</div>
+	</div>
+	<div id="footer">
+		footer<br/>
+	</div>
+</div>
+
+</body>
+</html>
+
