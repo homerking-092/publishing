@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <style>
+
+    </style>
+    <script>
+        // 화면 중간에 "메뉴" 라고 적힌 요소를 하나 만들고
+        // 마우스를 가져다 대면 음식메뉴가 보이고
+        // ex) 피자 : 20000원
+        //     치킨 : 25000원
+        //     탕수육 : 30000원
+        // 마우스를 메뉴 라고 적힌 요소에서 치우면 보이지 않게 jquery를 이용해 만들기
+
+        /// mouseenter, mouseleave 사용
+        $(() => {
+            // $("#menu").mouseenter(function () {
+            //     $(".list").css("display", "block");
+            // });
+
+            // $("#menu").mouseleave(function () {
+            //     $(".list").css("display", "none");
+            // });
+            /// hover 사용시
+            $("#menu").hover(function () {
+                // 마우스 올릴때 실행될 내용
+                $(".list").css("display", "block");
+            }, function () {
+                // 마우스 내보낼떄 실행될 내용
+                $(".list").css("display", "none");
+            });
+
+
+        });
+    </script>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+
+<body>
+    <div id="menu">
+        <h1>메뉴</h1> <!-- 상시 노출부분 -->
+        <ul class="list">
+            <!-- 함수기능에 따라 노출 부분 -->
+            <li>피자 20000원</li>
+            <li>치킨 20000원</li>
+            <li>라면 20000원</li>
+            <li>냉면 20000원</li>
+            <li>초밥 20000원</li>
+        </ul>
+    </div>
+</body>
+
+</html>
