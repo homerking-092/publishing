@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <style>
+
+    </style>
+    <script>
+        // 자바스크립트의 객체지향 프로그래밍은 자바와 유사하나
+        // 명시적인 키워드가 많이 부족하고
+        // 실행 형식도 자바스크립트에서만 쓰는 일부 개념이 있어
+        // 예외적인 상황이 많이 발생합니다
+
+        // 클래스라는 키워드를 지원하기는 하지만
+        // 우선 ES5 기준의 객체지향 프로그램을 보겠습니다
+        // 과거에는 그냥 함수를 만들어놓고 클래스처럼
+        // 활용하는 발식을 취했습니다
+
+        // 함수이지만 내부에 this 키워드를 써서 변수를 만들고
+        // 함수를 만들어주면 클래스처럼 기능
+        function Person(name) {
+            this.name = name;
+
+            this.getName = function () {        //// 함수에 이름이 없는 일급객체 변수에 저장해 사용
+                return this.name;
+            }
+
+            this.setName = function (name) {
+                this.name = name;
+            }
+        }// end Person()
+
+        var me = new Person("son");
+        console.log(me.getName());
+
+        me.setName("h-m");
+        console.log(me.getName());
+
+        console.log(me);
+
+        // 사람객체를 두 개 더 만들어서 위처럼 활용
+        var son = new Person("sony");
+        var ro = new Person("naldo");
+
+        // getter
+        console.log("son gt: " + son.getName());
+        console.log("nalod gt: " + ro.getName());
+
+        // setter
+        son.setName("ttn legend");
+        console.log("son st: " +son.getName());
+        ro.setName("king is back");
+        console.log("naldo st: " + ro.getName());
+
+        console.log(son);
+        console.log(ro);
+    </script>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+
+<body>
+
+</body>
+
+</html>

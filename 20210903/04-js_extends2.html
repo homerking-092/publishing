@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<style>
+
+</style>
+<script>
+    // 문제
+    // Person과 그것을 상속한 요소를 2개 만들어서 활용해주세요
+
+    // Person은 이름과 나이를 가집니다
+    function Person(name, age) {
+        this.name = name;
+        this.age = age;
+    }
+    Person.prototype.getName = function () {
+        return this.name;
+    }
+    Person.prototype.getAge = function () {
+        return this.age;
+    }
+    Person.prototype.setName = function (name) {
+        this.name = name;
+    }
+    Person.prototype.setAge = function (age) {
+        this.age = age;
+    }
+    // 나머지 요소들은 각자 자기자신의 멤버변수 하나와
+    // 자기 자신만 사용할 수 있는 메서드(행동)를 
+    // 하나씩 가집니다
+    
+    /// 1. 학생 ////////////////////////////////////////////////
+    function Student(name, age, grade) {
+        this.grade = grade;
+    }
+    var newStu = new Person("김학생");
+    Student.prototype = newStu;
+    Student.prototype.setGrade = function (grade) {
+        this.grade = grade;
+    }
+    Student.prototype.getGrade = function () {
+        return this.grade;
+    }
+    /// 2.공무원    //////////////////////////////////////////////////
+    function Official(name, age, location) {
+        this.location = location;
+    }
+    var newOffi = new Person("김철밥");
+    Official.prototype = newOffi;
+    Official.prototype.setLocation = function (location) {
+        this.location = location;
+    }
+    Official.prototype.getLocation = function () {
+        return this.location;
+    }
+    ///////////////////////////////////////////////////////////////
+    newOffi.setAge(30);
+    newOffi.setLocation("영등포");
+    newOffi.setName("철밥통");
+
+    console.log("김철밥 별명: " + newOffi.getName());
+    console.log("나이: " +  newOffi.getAge());
+    console.log("소속: " + newOffi.getLocation());
+    console.log("----------------------");
+    newStu.setName("김복학");
+    newStu.setAge(25);
+    newStu.setGrade(3);
+    console.log("김학생 개명: " + newStu.getName());
+    console.log("나이: " +  newStu.getAge());
+    console.log("학년: " + newStu.getGrade());
+</script>
+<meta charset="UTF-8">
+<title></title>
+</head>
+<body>
+
+</body>
+</html>
